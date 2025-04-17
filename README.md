@@ -12,8 +12,8 @@ This repository contains a Docker-based development environment for Symfony appl
 
 1. Clone this repository:
 ```bash
-git clone git@github.com:Webanimus/symfony-dev-docker-base.git
-cd symfony-dev-docker-base
+git clone git@github.com:pevansfan/exam-symfony-2025.git
+cd exam-symfony-2025
 ```
 
 2. Start the Docker environment:
@@ -21,14 +21,7 @@ cd symfony-dev-docker-base
 docker compose up -d --build
 ```
 
-3. Create a new Symfony project:
-```bash
-docker compose exec php composer create-project symfony/skeleton .
-docker compose exec php composer require webapp
-docker compose exec php composer require symfony/orm-pack
-```
-
-4. Set proper permissions:
+3. Set proper permissions:
 ```bash
 docker compose exec php chown -R www-data:www-data var
 ```
@@ -39,12 +32,6 @@ docker compose exec php chown -R www-data:www-data var
 - phpMyAdmin: http://localhost:8081 (database management)
 - MailHog: http://localhost:8025 (email testing interface)
 
-## Database Configuration
-
-Update your `.env` file with these database credentials:
-```dotenv
-DATABASE_URL="mysql://symfony:symfony@database:3306/symfony?serverVersion=mariadb-10.11.2"
-```
 
 ## Docker Services
 
