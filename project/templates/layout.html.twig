@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        {% if app.request.attributes.get('_route') != 'app_login' %}
+            <aside class="sidebar">
+                <!-- Contenu de la sidebar commune -->
+                <ul>
+                    <li><a href="{{ path('app_expense_new') }}">Créer une nouvelle dépense</a></li>
+                    <li><a href="{{ path('app_expense_index') }}">Expenses</a></li>
+                </ul>
+            </aside>
+        {% endif %}
+        <main class="content">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+{% endblock %}
